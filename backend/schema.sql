@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS users(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(10) NOT NULL, 
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS user_roles(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    user_roles VARCHAR(25) DEFAULT 'user',
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
