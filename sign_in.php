@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $result->fetch_assoc();
         echo $user['password'] . "<br>";
         echo $password . "<br>";
-        print_r($user);
+        // print_r($user);
         // Verify the password
         if ($password == $user['password']) {
             // Start the session and store user information

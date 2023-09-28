@@ -24,8 +24,9 @@
                 <ul>
                     <li><a href="./index.php">Home</a></li>
                     <li><a href="./jobs.php">Jobs</a></li>
-                    <li><a href="./companies.php">Companies</a></li>
-                    <li><a href="./sign_in.php">Sign In</a></li>
+                    <?php if (!login()) { ?>
+                        <li><a href="./sign_in.php">Sign In</a></li>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="Explore d-flex-col">

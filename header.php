@@ -13,7 +13,13 @@ require_once 'function.php';
             <div class="navbar-menu">
                 <a href="./index.php">Home</a>
                 <a href="./jobs.php">Jobs</a>
-                <a href="./companies.php">Companies</a>
+                <?php
+                if (admin()) { ?>
+                    <a href="./backend/admin.php">Dashboard</a>
+                <?php }
+                if (login() && !admin()) { ?>
+                    <a href="./profile.php">Profile</a>
+                <?php } ?>
                 <?php
                 if (login()) { ?>
                     <a href="./sign_out.php">Sign Out</a>
